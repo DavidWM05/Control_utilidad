@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CRUD interactivo para reporte de precios y utilidades por pipa.">
+  <meta name="author" content="Luvid Software">
+  <meta name="keywords" content="CRUD, Excel, reporte, utilidad, pipa, venta, litros, análisis financiero">
+  <title>Administracion de Utilidad</title>
+
+  <!-- SheetJS -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      background: #000;
+      color: #fff;
+      display: inline-block;
+      padding: 10px 25px;
+      border-radius: 5px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .actions {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .actions input, .actions button {
+      margin: 5px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .actions input[type=file] {
+      background: #eee;
+    }
+
+    .actions button {
+      background-color: #0a84ff;
+      color: white;
+      transition: background 0.3s;
+    }
+
+    .actions button:hover {
+      background-color: #006fe6;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      text-align: center;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    th:nth-child(3), td:nth-child(3) { background-color: #d9eaf7; }
+    th:nth-child(4), td:nth-child(4) { background-color: #d9f7d9; }
+    th:nth-child(8), td:nth-child(8) { background-color: #d9eaf7; }
+
+    tr:hover {
+      background-color: #eef7ff;
+      transition: 0.3s;
+    }
+
+    td:last-child button {
+      margin: 2px;
+      padding: 5px 8px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .edit-btn {
+      background-color: #ffc107;
+      color: #000;
+    }
+
+    .delete-btn {
+      background-color: #dc3545;
+      color: #fff;
+    }
+
+    .negative {
+      background-color: #e0e0e0;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1 id="">Control de Utilidad</h1>
+
+    <div class="actions">
+      <input type="date" id="utilidad_fecha" min="2025-01-01" max="2025-12-31">
+      <input type="file" id="inputExcel" accept=".xlsx,.xls,.ods">
+      <button onclick="exportToExcel()">💾 Guardar Excel</button>
+      <button onclick="addNewRow()">➕ Agregar Registro</button>
+    </div>
+
+    <table id="dataTable">
+      <thead>
+        <tr>
+          <th>PRECIO PIPA VDM</th>
+          <th>LITROS COMPRADOS</th>
+          <th>PRECIO COMPRA X LITRO</th>
+          <th>PRECIO VENTA X LITRO</th>
+          <th>VENTA DE PIPA</th>
+          <th>UTILIDAD</th>
+          <th>% UTILIDAD</th>
+          <th>UTILIDAD POR PIPA</th>
+          <th>UTILIDAD X LITRO</th>
+          <th>ACCIONES</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Se llenará dinámicamente -->
+      </tbody>
+    </table>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
