@@ -128,6 +128,7 @@
       <input type="file" id="inputExcel" accept=".xlsx,.xls,.ods">
       <button onclick="exportToExcel()">💾 Guardar Excel</button>
       <button onclick="addNewRow()">➕ Agregar Registro</button>
+      <button onclick="calcularAcumuladosBoton()">📊 Calcular Acumulados</button>
     </div>
 
     <table id="dataTable">
@@ -142,6 +143,10 @@
           <th>% UTILIDAD</th>
           <th>UTILIDAD POR PIPA</th>
           <th>UTILIDAD X LITRO</th>
+          <th>VTA.LTS.X.DIA.Y PRO</th>
+          <th>VTA. X DIA Y ACUMUL</th>
+          <th>UTILIDAD $ ..X PRODUCTO</th>
+          <th>UT.. X DIA Y ACUMUL</th>
           <th>ACCIONES</th>
         </tr>
       </thead>
@@ -149,7 +154,13 @@
         <!-- Se llenará dinámicamente -->
       </tbody>
     </table>
-  </div>
+
+    <!-- Acumulados -->
+    <div class="acomulados">
+      <h2>Acumulados Del Dia</h2>
+      <p><strong>Total Venta X Dia Y Acumulado:</strong> <span id="totalVentaAcumulado">0</span></p>
+      <p><strong>Total Utilidad X Dia Y Acumulado:</strong> <span id="totalUtilidadAcumulado">0</span></p>
+    </div>
   <script src="app.js"></script>
 </body>
 </html>
