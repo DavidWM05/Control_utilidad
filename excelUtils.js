@@ -54,7 +54,7 @@ function exportToExcel() {
     }
 
     // Hoja de cambio de precio
-    const turnosData = procesarTurnosParaExcel();
+    const turnosData = procesarTurnosParaExcel(false);
 
     // Crear libro y hojas
     const wb = XLSX.utils.book_new();

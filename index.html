@@ -129,7 +129,6 @@
       <input type="file" id="inputExcel" accept=".xlsx,.xls,.ods">
       <button onclick="exportToExcel()">💾 Guardar Excel</button>
       <button onclick="addNewRow()">➕ Agregar Registro</button>
-      <button onclick="calcularAcumuladosBoton()">📊 Calcular Acumulados</button>
     </div>
 
     <table id="dataTable">
@@ -169,7 +168,7 @@
     <h1 id="">Control de Utilidad Por Turno</h1>
     <div class="actions">
       <input type="date" id="utilidad_turno_fecha" min="2025-01-01" max="2025-12-31">
-      <button onclick="agregarTurno()">➕ Agregar Turno</button>
+      <button onclick="addNewRowTurno()">➕ Agregar Turno</button>
       <button onclick="procesarTurnosParaExcel()">⚙️ Calcular</button>
     </div>
 

@@ -261,8 +261,8 @@ function renderResultado(registro) {
             <td>${formatearNumero(row.utilidadXProducto)}</td>
             <td>${formatearNumero(row.utilidadXDiaYAcumulado)}</td>
             <td>
-                <button class="edit-btn" onclick="editRow(${key})">✏️</button>
-                <button class="delete-btn" onclick="deleteRow(${key})">🗑️</button>
+                <button class="edit-btn" onclick="editRow('${key}')">✏️</button>
+                <button class="delete-btn" onclick="deleteRow('${key}')">🗑️</button>
             </td>
         `;
         tbody.appendChild(tr);

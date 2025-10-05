@@ -1,4 +1,4 @@
-function procesarTurnosParaExcel() {
+function procesarTurnosParaExcel(mostrarMensaje) {
     debugger;
     // Asegúrate de tener listaDeRegistros y listaDeRegistrosTurno cargados
     const resultado = [];
@@ -112,7 +112,8 @@ function procesarTurnosParaExcel() {
     // Limpiar el stock virtual para futuras ejecuciones
     delete procesarTurnosParaExcel.stock;
 
-    alert("Procesamiento de turnos para Excel completado.");
+    if (mostrarMensaje || mostrarMensaje == undefined || mostrarMensaje == null)
+        alert("Proceso de cambio de precio completado.");
 
     return resultado;
 }
@@ -157,6 +158,8 @@ function addNewRowTurno() {
     });
 
     alert("Turnos agregados/actualizados para la fecha " + fecha);
+
+    renderTurnoTable();
 }
 
 function editRowTurno(fecha, turno) {
@@ -176,6 +179,8 @@ function editRowTurno(fecha, turno) {
     turnoObj.Diesel = { litros: diesel };
 
     alert("Turno actualizado.");
+
+    renderTurnoTable();
 }
 
 function renderTurnoTable() {
