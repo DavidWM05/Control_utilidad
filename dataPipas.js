@@ -247,6 +247,7 @@ function renderResultado(registro) {
         const row = registro[key];
         
         tr.innerHTML = `
+            <td>${key}</td>
             <td>${formatearNumero(row.precioPipaVDM)}</td>
             <td>${formatearNumero(row.litrosComprados)}</td>
             <td>${formatearNumero(row.precioCompraxLitro)}</td>
